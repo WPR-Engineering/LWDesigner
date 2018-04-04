@@ -55,3 +55,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'cocoon'
+
+gem 'simple_form'
+
+gem 'haml'
+
+gem 'jquery-rails'
