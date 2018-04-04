@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  inputDescription: MyText
+  lwChannel: 1
+  shared: false
+  sourceMode: MyString
+  gain: 1
+  disabled: false
+  notes: MyText
+  node: one
+
+two:
+  name: MyString
+  inputDescription: MyText
+  lwChannel: 1
+  shared: false
+  sourceMode: MyString
+  gain: 1
+  disabled: false
+  notes: MyText
+  node: two

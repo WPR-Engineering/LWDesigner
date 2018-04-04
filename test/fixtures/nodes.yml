@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hostname: MyString
+  location: MyText
+  ipAddress: MyString
+  subnetMask: MyString
+  nodeType: MyString
+
+two:
+  hostname: MyString
+  location: MyText
+  ipAddress: MyString
+  subnetMask: MyString
+  nodeType: MyString

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hostname:</strong>
+  <%= @node.hostname %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @node.location %>
+</p>
+
+<p>
+  <strong>Ipaddress:</strong>
+  <%= @node.ipAddress %>
+</p>
+
+<p>
+  <strong>Subnetmask:</strong>
+  <%= @node.subnetMask %>
+</p>
+
+<p>
+  <strong>Nodetype:</strong>
+  <%= @node.nodeType %>
+</p>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>
