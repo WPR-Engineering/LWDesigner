@@ -69,7 +69,7 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:hostname, :location, :ipAddress, :subnetMask, :nodeType,
+      params.require(:node).permit(:hostname, :location, :ipAddress, :subnetMask, :nodeType, :mode,
       node_inputs_attributes: [:id, :_destroy, :name, :inputDescription, :lwChannel, :shared, :sourceMode, :gain, :disabled, :notes, :node_id]
     )
     end
