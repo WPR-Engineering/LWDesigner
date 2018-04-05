@@ -1,15 +1,18 @@
-= simple_form_for @node do |f|
-  = f.error_notification
-  = f.input :hostname
-  = f.input :location
-  = f.input :ipAddress
-  = f.input :subnetMask
-  = f.input :nodeType
-  = f.input :mode, collection: ["Stereo", "Mono", "Mixed"]
-  %h3 Inputs
-  #tasks
-    = f.simple_fields_for :node_inputs do |node_input|
-      = render 'input_fields', f: node_input
-    .links
-      = link_to_add_association 'add Input', f, :node_inputs
-  = f.submit
+%table
+  .fuckthis
+    %tr
+      = simple_form_for @node do |f|
+        %td= f.input :hostname
+        %td= f.input :location
+        %td= f.input :ipAddress
+        %td= f.input :subnetMask
+        %td= f.input :nodeType
+        %td= f.input :mode, collection: ["Stereo", "Mono", "Mixed"]
+        %h3 Inputs
+        %td
+        #tasks
+        = f.simple_fields_for :node_inputs do |node_input|
+          = render 'input_fields', f: node_input
+        .links
+          = link_to_add_association 'add Input', f, :node_inputs
+        = f.submit
