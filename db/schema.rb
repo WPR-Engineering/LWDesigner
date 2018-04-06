@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404211246) do
+ActiveRecord::Schema.define(version: 20180406002710) do
 
   create_table "node_inputs", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20180404211246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["node_id"], name: "index_node_inputs_on_node_id"
+  end
+
+  create_table "node_outputs", force: :cascade do |t|
+    t.string "destination"
+    t.text "outputDescription"
+    t.integer "selectedChannel"
+    t.string "mode"
+    t.integer "gain"
+    t.text "notes"
+    t.integer "node_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["node_id"], name: "index_node_outputs_on_node_id"
   end
 
   create_table "nodes", force: :cascade do |t|

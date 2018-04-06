@@ -1,0 +1,25 @@
+%p#notice = notice
+
+%p
+  %b Name:
+  = @node.hostname
+
+%p
+  %b Location:
+  = @node.location
+
+%h3 Inputs
+#ins
+- @node.node_inputs.each do |node_input|
+  %p= node_input.name
+  %p= node_input.notes
+
+%h3 Outputs
+#ins
+- @node.node_outputs.each do |node_output|
+  %p= node_output.outputDescription
+  %p= node_output.notes
+
+= link_to 'Edit', edit_node_path(@node)
+\|
+= link_to 'Back', nodes_path

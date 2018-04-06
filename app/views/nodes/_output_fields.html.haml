@@ -1,0 +1,8 @@
+.nested-fields
+  = f.input :destination
+  = f.input :outputDescription
+  = f.input :selectedChannel
+  = f.input :mode
+  = f.input :gain
+  = f.input :notes, as: :string
+  = link_to_remove_association "remove output", f
