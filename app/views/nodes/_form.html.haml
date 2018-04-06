@@ -9,8 +9,10 @@
     = f.error_notification
     = f.input :hostname
     = f.input :location, as: :string
+    = f.input :serialNumber
     = f.input :ipAddress
     = f.input :subnetMask
+    = f.input :macAddress
     = f.input :nodeType, collection: ["Analog", "Microphone", "AES/EBU"]
     = f.input :mode, collection: ["Stereo", "Mono", "Mixed"]
     %h3 Inputs (into the LiveWire network)

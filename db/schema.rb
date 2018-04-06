@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406002710) do
+ActiveRecord::Schema.define(version: 20180406214817) do
 
   create_table "node_inputs", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20180406002710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "mode"
+    t.string "macAddress"
+    t.string "serialNumber"
   end
 
 end
