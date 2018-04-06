@@ -5,7 +5,7 @@ class Node < ApplicationRecord
   accepts_nested_attributes_for :node_inputs, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :node_outputs, reject_if: :all_blank, allow_destroy: true
   validates :mode, :hostname, :location, presence: true
-  validates :ipAddress, length: { in: 11..15 }
+  validates :ipAddress, length: { in: 7..15 }
 
 private
 
