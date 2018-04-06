@@ -4,12 +4,21 @@ class NodeInput < ApplicationRecord
   belongs_to :node
   validate :validate_input_limit
 
+
   private
 
    def validate_input_limit
-    raise Exception.new('Thats not allowed') if node.mode == "Stero" && node.node_inputs.size > NUMBER_OF_PERMITTED_INPUTS
-    raise Exception.new('This isnt allowed either') if node.mode == "Mono" && node.node_inputs.size > MONO_INPUTS
-    raise Exception.new('This isnt allowed either') if node.mode == "Mixed" && node.node_inputs.size > MONO_INPUTS
+     if node.mode == "Stereo" && node.node_inputs.size > NUMBER_OF_PERMITTED_INPUTS
+       node.errors.add(:base, :invalid, message: "Only 4 inputs are allowed in stereo mode, please remove addditional inputs or switch to mono or mixed")
+     end
+     if node.mode == "Mono" && node.node_inputs.size > MONO_INPUTS
+       node.errors.add(:base, :invalid, message: "Only 8 inputs are allowed in Mono mode, please remove addditional inputs.")
+     end
+     if node.mode == "Mixed" && node.node_inputs.size > MONO_INPUTS
+       node.errors.add(:base, :invalid, message: "Maximum of 8 inputs are allowed in Mixed mode, please remove addditional inputs.")
+     end
    end
+
+
 
 end

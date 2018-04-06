@@ -1,5 +1,11 @@
 %div{:class => "table1"}
   = simple_form_for @node do |f|
+    -if @node.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@node.errors.count, "error")} prohibited this project from being saved:"
+        %ul
+          - @node.errors.full_messages.each do |msg|
+            %li= msg
     = f.error_notification
     = f.input :hostname
     = f.input :location, as: :string
