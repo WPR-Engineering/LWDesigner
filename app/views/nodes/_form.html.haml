@@ -1,18 +1,28 @@
-%table
-  .fuckthis
-    %tr
-      = simple_form_for @node do |f|
-        %td= f.input :hostname
-        %td= f.input :location
-        %td= f.input :ipAddress
-        %td= f.input :subnetMask
-        %td= f.input :nodeType
-        %td= f.input :mode, collection: ["Stereo", "Mono", "Mixed"]
-        %h3 Inputs
-        %td
-        #tasks
-        = f.simple_fields_for :node_inputs do |node_input|
-          = render 'input_fields', f: node_input
-        .links
-          = link_to_add_association 'add Input', f, :node_inputs
-        = f.submit
+%div{:class => "table1"}
+  = simple_form_for @node do |f|
+    -if @node.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@node.errors.count, "error")} prohibited this project from being saved:"
+        %ul
+          - @node.errors.full_messages.each do |msg|
+            %li= msg
+    = f.error_notification
+    = f.input :hostname
+    = f.input :location, as: :string
+    = f.input :ipAddress
+    = f.input :subnetMask
+    = f.input :nodeType, collection: ["Analog", "Microphone", "AES/EBU"]
+    = f.input :mode, collection: ["Stereo", "Mono", "Mixed"]
+    %h3 Inputs (into the LiveWire network)
+    #tasks
+      = f.simple_fields_for :node_inputs do |node_input|
+        = render 'input_fields', f: node_input
+      .links
+        = link_to_add_association 'add Input', f, :node_inputs
+    %h3 Outputs (from nodes into other devices)
+    #outs
+      = f.simple_fields_for :node_outputs do |node_output|
+        = render 'output_fields', f: node_output
+      .links
+        = link_to_add_association 'add Output', f, :node_outputs
+      = f.submit
