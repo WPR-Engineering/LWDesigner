@@ -3,6 +3,9 @@ class NodeInput < ApplicationRecord
   MONO_INPUTS = 8
   belongs_to :node
   validate :validate_input_limit
+  validates :mode, :hostname, :location, presence: true
+  validates :ipAddress, length: { in: 11..16 }
+
 
 
   private
