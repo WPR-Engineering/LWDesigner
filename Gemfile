@@ -60,9 +60,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #nested forms
 gem 'cocoon'
+
 #quick form making
 gem 'simple_form'
+
 #i dont like erb
 gem 'haml'
+
 #for cocoon to work right
 gem 'jquery-rails'
+
+#global Search
+gem 'searchkick', github: "ankane/searchkick"
+gem 'elasticsearch'

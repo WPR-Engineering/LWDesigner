@@ -1,0 +1,1 @@
+ENV["ELASTICSEARCH_URL"] = "elasticsearch hostname and port goes here"

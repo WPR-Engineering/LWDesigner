@@ -24,3 +24,4 @@
 
 /config/database.yml
 /config/database.yml.bak
+/config/initializers/elasticsearch.rb

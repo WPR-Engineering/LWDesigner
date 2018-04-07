@@ -4,6 +4,13 @@ This application will help you in managing and documenting your new (or existing
 
 this application is built with ruby on rails, and uses a pgsql database for production deployments.
 
+##Config
+
+Searchkick is used for global search, this requires elasticsearch. if you are just doing a test or development install and you are on mac jsut `brew install elasticsearch` for production its reccomended to have elasticsearch installed on another machine or if you have enough memory you can probably run it on the same machien as LWDesigner.
+
+If you are running this in production, you will have to go into /config/initializers/elasticsearch.rb.example, put your hostname (:9200 for default port) in and rename to elasticsearch.rb  this will set the correct hostname for elasticsearch.
+
+
 ## Current Features
 * Node Documentation
   - hostname
