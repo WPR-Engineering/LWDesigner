@@ -16,13 +16,13 @@
     %h3 Inputs (into the LiveWire network)
     #tasks
       = f.simple_fields_for :node_inputs do |node_input|
-        = render 'input_fields', f: node_input
+        = render 'node_input_fields', f: node_input
       .links
         = link_to_add_association 'add Input', f, :node_inputs
     %h3 Outputs (from nodes into other devices)
     #outs
       = f.simple_fields_for :node_outputs do |node_output|
-        = render 'output_fields', f: node_output
+        = render 'node_output_fields', f: node_output
       .links
         = link_to_add_association 'add Output', f, :node_outputs
       = f.submit

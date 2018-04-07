@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406002710) do
+ActiveRecord::Schema.define(version: 20180407055303) do
+
+  create_table "gpio_terminals", force: :cascade do |t|
+    t.string "name"
+    t.integer "pin"
+    t.text "description"
+    t.integer "lwchannel"
+    t.text "notes"
+    t.integer "node_gpio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ioDirection"
+    t.integer "powerstation_id"
+    t.index ["node_gpio_id"], name: "index_gpio_terminals_on_node_gpio_id"
+    t.index ["powerstation_id"], name: "index_gpio_terminals_on_powerstation_id"
+  end
+
+  create_table "node_gpios", force: :cascade do |t|
+    t.string "hostname"
+    t.text "location"
+    t.string "serialNumber"
+    t.string "macAddress"
+    t.string "ipAddress"
+    t.string "subnetmask"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "node_inputs", force: :cascade do |t|
     t.string "name"
@@ -24,7 +50,9 @@ ActiveRecord::Schema.define(version: 20180406002710) do
     t.integer "node_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "powerStation_id"
     t.index ["node_id"], name: "index_node_inputs_on_node_id"
+    t.index ["powerStation_id"], name: "index_node_inputs_on_powerStation_id"
   end
 
   create_table "node_outputs", force: :cascade do |t|
@@ -37,7 +65,9 @@ ActiveRecord::Schema.define(version: 20180406002710) do
     t.integer "node_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "powerStation_id"
     t.index ["node_id"], name: "index_node_outputs_on_node_id"
+    t.index ["powerStation_id"], name: "index_node_outputs_on_powerStation_id"
   end
 
   create_table "nodes", force: :cascade do |t|
@@ -49,6 +79,17 @@ ActiveRecord::Schema.define(version: 20180406002710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "mode"
+  end
+
+  create_table "power_stations", force: :cascade do |t|
+    t.string "hostname"
+    t.text "location"
+    t.string "macAddress"
+    t.string "ipAddress"
+    t.string "subnetmask"
+    t.string "serialNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

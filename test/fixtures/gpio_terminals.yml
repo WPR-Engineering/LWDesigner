@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pin: 1
+  description: MyText
+  lwchannel: 1
+  notes: MyText
+  nodeGPIO: one
+
+two:
+  name: MyString
+  pin: 1
+  description: MyText
+  lwchannel: 1
+  notes: MyText
+  nodeGPIO: two

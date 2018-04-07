@@ -19,15 +19,22 @@ Core feature that still need to be completed
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
-- [ ] support for powerstation and QOR I/O
-- [ ] Proper GPIO node documentation
+- [ ] support for powerstation and QOR I/O - ** in progress **
+- [ ] Proper GPIO node documentation - ** in progress **
 - [ ] Button pannels and XY selectors
 - [ ] Pathfinder stuff (maybe)
-- [ ] Serial numbers
-- [ ] mac addresses
+- [ ] Serial numbers - ** in progress **
+- [ ] mac addresses - ** in progress **
+- [ ] add header
+  - [x] create header
+  - [ ] style header
+- [ ] add dashbaord
+  - [x] create dashbaord
+  - [ ] style dashboard
+
 
 ## Wishlist
-Features that I would like to impliment some time
+Features that I would like to impliment eventually
 - [ ] DNS management
   - [ ] update windows DNS server from hostname
   - [ ] update BIND from hostname
