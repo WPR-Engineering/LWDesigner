@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate
   before_action :authorize_mini_profiler
+  before_action :set_paper_trail_whodunnit
 
   # Not authorized so go to root
   rescue_from CanCan::AccessDenied do |exception|

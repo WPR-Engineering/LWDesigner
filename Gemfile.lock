@@ -125,6 +125,9 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     nprogress-rails (0.2.0.2)
+    paper_trail (9.0.0)
+      activerecord (>= 4.2, < 5.3)
+      request_store (~> 1.1)
     pg (1.0.0)
     public_suffix (3.0.2)
     puma (3.11.3)
@@ -160,6 +163,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    request_store (1.4.1)
+      rack (>= 1.4)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.6)
@@ -234,6 +239,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   nprogress-rails
+  paper_trail
   pg
   puma (~> 3.7)
   rack-mini-profiler
