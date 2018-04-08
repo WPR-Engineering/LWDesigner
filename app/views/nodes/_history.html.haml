@@ -13,7 +13,7 @@
       %tr
 
         %td=find_change_user(rev.user_id)
-        %td=rev.created_at
+        %td=rev.created_at.in_time_zone('America/Chicago')
         %td=rev.action
         %td=rev.auditable_type
         %td=rev.version

@@ -2,8 +2,7 @@
 #notice= notice
 
 %p
-  %b Name:
-  = @node.hostname
+  %h1 Name: #{ @node.hostname }
 
 %p
   %b Location:
@@ -11,15 +10,52 @@
 
 %h3 Inputs
 #ins
-- @node.node_inputs.each do |node_input|
-  %p= node_input.name
-  %p= node_input.notes
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
+    %tr
+      %th Name on Network
+      %th Detail
+      %th Livewire Channel
+      %th Share Status
+      %th Source Mode
+      %th gain
+      %th Disabled
+      %th Notes
+
+  %tbody
+    - @node.node_inputs.each do |node_input|
+      %tr
+        %td=node_input.name
+        %td=node_input.inputDescription
+        %td=node_input.lwChannel
+        %td=node_input.shared
+        %td=node_input.sourceMode
+        %td=node_input.gain
+        %td=node_input.disabled
+        %td=node_input.notes
 
 %h3 Outputs
-#ins
-- @node.node_outputs.each do |node_output|
-  %p= node_output.outputDescription
-  %p= node_output.notes
+#outs
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
+    %tr
+      %th Connected to
+      %th Detail
+      %th Subscription
+      %th Mode
+      %th Output Gain
+      %th notes
+
+  %tbody
+    - @node.node_outputs.each do |node_output|
+      %tr
+        %td=node_output.destination
+        %td=node_output.outputDescription
+        %td=node_output.selectedChannel
+        %td=node_output.mode
+        %td=node_output.gain
+        %td=node_output.notes
+
 
 = link_to 'Edit', edit_node_path(@node)
 \|
