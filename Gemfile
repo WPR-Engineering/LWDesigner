@@ -86,6 +86,3 @@ gem 'bcrypt'
 gem 'rack-mini-profiler'
 gem 'flamegraph'
 gem 'stackprof'
-
-#change auditing
-gem 'paper_trail'
