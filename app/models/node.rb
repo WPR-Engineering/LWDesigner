@@ -7,6 +7,8 @@ class Node < ApplicationRecord
   validates :mode, :hostname, :location, presence: true
   validates :ipAddress, length: { in: 7..15 }
 
+  audited
+  has_associated_audits
 
   after_commit :reindex_stuff
 

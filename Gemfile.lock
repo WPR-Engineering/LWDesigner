@@ -7,6 +7,14 @@ GIT
       elasticsearch (>= 5)
       hashie
 
+GIT
+  remote: https://github.com/collectiveidea/audited.git
+  revision: fd951661fa6410f94194a93059a69e805f14595f
+  branch: master
+  specs:
+    audited (4.7.0)
+      activerecord (>= 4.2, < 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,6 +227,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited!
   bcrypt
   byebug
   cancancan

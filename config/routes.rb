@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   resources :node_gpios
   resources :power_stations
-  resources :nodes
+  resources :nodes do
+    resources :audits do
+      member do
+        get :diff, to: 'history#diff'
+      end
+    end
+  end
 
   get 'search/index'
   post 'search/query'

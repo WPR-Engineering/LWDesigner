@@ -86,3 +86,6 @@ gem 'bcrypt'
 gem 'rack-mini-profiler'
 gem 'flamegraph'
 gem 'stackprof'
+
+#auditing
+gem 'audited', github: "collectiveidea/audited", :branch => "master"
