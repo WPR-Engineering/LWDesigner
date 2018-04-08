@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "variables";
+ @import "ionicons";
+
+ /* Font Awesome */
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+ /* Progess bar for turbolinks */
+ $nprogress-color: $brand-color;
+ @import 'nprogress';
+ @import 'nprogress-bootstrap';
+
+ /* General app styles */
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 	MuseoSans, helvetica, arial, sans-serif;
+
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  font-weight: 100;
+}
+
+* {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+
+  vertical-align: middle;
+
+  &:visited {
+    color: #000000;
+  }
+
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+#notifications {
+  margin: 1em auto;
+}
+
+
+.field {
+  margin: .5em auto;
+}
+
+.gravatar {
+  vertical-align: middle;
+
+  margin-left: .5em;
+
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}

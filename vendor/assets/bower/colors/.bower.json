@@ -1,0 +1,14 @@
+{
+  "name": "colors",
+  "homepage": "https://github.com/mrmrs/colors",
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.0",
+    "commit": "0c25b94b5064e36128ea8ebb1bcba9bc6fa0772f"
+  },
+  "_source": "https://github.com/mrmrs/colors.git",
+  "_target": "^3.0.0",
+  "_originalSource": "colors"
+}

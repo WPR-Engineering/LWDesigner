@@ -1,3 +1,246 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+#header-sidebar, #sidebar {
+  width: $sidebar-width;
+  background-color: $sidebar-header-color;
+
+  a {
+    color: #FFFFFF;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
+
+#header-sidebar {
+  text-align: center;
+
+  div {
+    height: 100%;
+    width: 100%;
+
+    display: table;
+
+    a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+#sidebar {
+  background-color: $sidebar-color;
+}
+
+#header-main, #main {
+  width: 100% - $sidebar-width;
+}
+
+#header-main {
+  background-color: $main-header-color;
+}
+
+#main {
+  background-color: $main-color;
+}
+
+#header {
+  top: 0;
+
+  position: fixed;
+
+  display: block;
+
+  width: 100%;
+  height: $navbar-height;
+
+  border-bottom: 1px rgba(#000000, 1);
+
+  section {
+    display: inline-block;
+    height: 100%;
+    float: left;
+  }
+}
+
+main {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  #main {
+    display: inline-block;
+
+    float: left;
+  }
+
+  #sidebar {
+    position: fixed;
+
+    top: $navbar-height;
+
+    height: 100%;
+  }
+
+  #main {
+    min-height: 100%;
+
+    margin-left: $sidebar-width;
+  }
+
+  #main-container {
+    margin: 1em;
+
+    padding-top: $navbar-height;
+  }
+}
+
+#header-container {
+  display: table-cell;
+
+  vertical-align: middle;
+
+  float: right;
+  height: 100%;
+
+  height: 100%;
+  width: 100%;
+
+  form {
+    display: inline-block;
+    height: 100%;
+  }
+
+  div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  & > span {
+    height: 100%;
+
+    margin: 0 auto;
+
+    &:last-child {
+      float: right;
+      margin-left: auto;
+      margin-right: 1em;
+    }
+  }
+}
+
+#search_field {
+  height: 100%;
+
+  i {
+    display: inline-block;
+  }
+
+  input {
+    height: 100%;
+
+    display: inline-block;
+
+    margin: 0 auto;
+    padding: 0 1em;
+    border: none;
+
+    background-color: rgba(#000000, 0);
+
+    border-radius: 0;
+
+    font-size: 1.2em;
+
+    &:focus{
+      background-color: rgba(#000000, 0.15);
+
+      color: #000000;
+    }
+  }
+
+  .fa {
+    color: $sidebar-color;
+  }
+}
+
+#user_info {
+  span {
+    font-size: 1.3em;
+
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    position: relative;
+    top: 50%;
+    display: inline-block;
+  }
+}
+
+#header-sidebar {
+  a {
+    font-size: 1.3em;
+
+    &.brand {
+      font-family: MuseoSansItalic, helvetica, arial, sans-serif;
+      font-size: 2em;
+      font-weight: 500;
+    }
+  }
+}
+
+#user_menu {
+  ul {
+    white-space: nowrap;
+
+    list-style: none;
+
+    margin: 6px;
+
+    padding: 4px;
+
+    visibility: hidden;
+
+    position: absolute;
+
+    top: 100%;
+
+    width: max-content;
+
+    left: -250%;
+
+    border-radius: 2px;
+
+    -webkit-transition-property: visibility;
+    -moz-transition-property: visibility;
+    transition-property: visibility;
+
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+
+    background-color: #999999;
+
+    li {
+      margin: .01em .1em;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: $brand-color;
+      }
+    }
+  }
+
+  &:hover ul {
+    visibility: visible;
+    opacity: 1;
+  }
+}

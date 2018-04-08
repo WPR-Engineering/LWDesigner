@@ -1,0 +1,20 @@
+.flex {
+  display: -webkit-flex;
+  display: flex;
+
+  flex-flow: row;
+  -webkit-flex-flow: row;
+
+  justify-content: space-around;
+  -webkit-justify-content: space-around;
+
+  align-items: center;
+  -webkit-align-items: center;
+
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+
+  .spacer {
+    margin: auto;
+  }
+}
