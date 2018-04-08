@@ -22,7 +22,7 @@ If you are running this in production, you will have to go into /config/initiali
 
 # TO DO
 Core feature that still need to be completed
-- [ ] Global Search
+- [ ] Global Search - almost done!
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
@@ -32,12 +32,13 @@ Core feature that still need to be completed
 - [ ] Pathfinder stuff (maybe)
 - [ ] Serial numbers - ** in progress **
 - [ ] mac addresses - ** in progress **
-- [ ] add header
+- [x] add header
   - [x] create header
   - [ ] style header
 - [ ] add dashbaord
   - [x] create dashbaord
   - [ ] style dashboard
+- [x] Authentication
 
 
 ## Wishlist
