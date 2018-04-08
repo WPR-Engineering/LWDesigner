@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :networkings
+  resources :cables
   root to: 'dashboard#index'
 
   resources :node_gpios

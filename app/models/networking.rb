@@ -1,0 +1,2 @@
+class Networking < ApplicationRecord
+end

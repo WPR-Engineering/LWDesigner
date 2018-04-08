@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408064857) do
+ActiveRecord::Schema.define(version: 20180408211750) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20180408064857) do
     t.index ["user_id", "user_type"], name: "user_index"
   end
 
+  create_table "cables", force: :cascade do |t|
+    t.string "code"
+    t.integer "number"
+    t.string "type"
+    t.string "color"
+    t.string "termination"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gpio_terminals", force: :cascade do |t|
     t.string "name"
     t.integer "pin"
@@ -47,6 +58,18 @@ ActiveRecord::Schema.define(version: 20180408064857) do
     t.integer "powerstation_id"
     t.index ["node_gpio_id"], name: "index_gpio_terminals_on_node_gpio_id"
     t.index ["powerstation_id"], name: "index_gpio_terminals_on_powerstation_id"
+  end
+
+  create_table "networkings", force: :cascade do |t|
+    t.string "hostname"
+    t.string "type"
+    t.string "model"
+    t.string "macAddress"
+    t.string "ipAddress"
+    t.string "subnetMask"
+    t.integer "portCount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "node_gpios", force: :cascade do |t|
@@ -101,6 +124,16 @@ ActiveRecord::Schema.define(version: 20180408064857) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "mode"
+  end
+
+  create_table "ports", force: :cascade do |t|
+    t.integer "number"
+    t.string "type"
+    t.string "description"
+    t.integer "networking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["networking_id"], name: "index_ports_on_networking_id"
   end
 
   create_table "power_stations", force: :cascade do |t|
