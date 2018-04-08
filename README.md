@@ -22,14 +22,15 @@ If you are running this in production, you will have to go into /config/initiali
 
 # TO DO
 Core feature that still need to be completed
+- [ ] Change tracking / Version control
 - [ ] Global Search - almost done!
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
 - [ ] support for powerstation and QOR I/O - ** in progress **
-- [ ] Proper GPIO node documentation - ** in progress **
+- [x] Proper GPIO node documentation - ** in progress **
 - [ ] Button pannels and XY selectors
-- [ ] Pathfinder stuff (maybe)
+- [ ] ~~Pathfinder stuff (maybe)~~
 - [ ] Serial numbers - ** in progress **
 - [ ] mac addresses - ** in progress **
 - [x] add header
