@@ -28,8 +28,7 @@ gem 'nprogress-rails'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -78,3 +77,12 @@ gem 'elasticsearch'
 #style gems
 gem 'font-awesome-sass'
 gem 'ionicons-rails'
+
+#authentication
+gem 'cancancan'
+gem 'bcrypt'
+
+# Performance monitoring
+gem 'rack-mini-profiler'
+gem 'flamegraph'
+gem 'stackprof'

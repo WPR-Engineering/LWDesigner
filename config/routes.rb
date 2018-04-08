@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get 'search/index'
   post 'search/query'
 
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 end

@@ -1,0 +1,20 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#login-form {
+  width: 22em;
+  margin: 1em auto;
+}
+
+#login-header {
+  margin: 1em 0;
+
+  a {
+    font-size: 35px;
+    font-family: MuseoSansItalic;
+  }
+}
+
+#login-layout {
+  text-align: center;
+}

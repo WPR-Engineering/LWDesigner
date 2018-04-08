@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407055303) do
+ActiveRecord::Schema.define(version: 20180408034005) do
 
   create_table "gpio_terminals", force: :cascade do |t|
     t.string "name"
@@ -88,6 +88,27 @@ ActiveRecord::Schema.define(version: 20180407055303) do
     t.string "ipAddress"
     t.string "subnetmask"
     t.string "serialNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tokens", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "group"
+    t.string "password_digest"
+    t.string "external_id"
+    t.boolean "active", default: true
+    t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

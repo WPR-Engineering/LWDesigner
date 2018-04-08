@@ -6,15 +6,15 @@
   <% end %>
   <span id="user_info">
     <span>
-      Yo
+      Welcome, 
     </span>
     <span id="user_menu">
       <a>
-        your email will go here, soon.
+        <%= link_to current_user.first_name, current_user %>
       </a>
       <ul>
-        <li>logout link</li>
-        <li>account settings link</li>
+        <li><%= link_to 'Logout', session_path(1), method: :delete %></li>
+        <li><%= link_to 'Edit Account', edit_user_path(current_user) %></li>
       </ul>
     </span>
   </span>
