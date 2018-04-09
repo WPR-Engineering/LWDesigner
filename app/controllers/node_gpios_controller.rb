@@ -61,6 +61,14 @@ class NodeGpiosController < ApplicationController
     end
   end
 
+  def diff
+
+  end
+
+  def full_history
+    @nodes = NodeGpio.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_node_gpio
@@ -70,7 +78,7 @@ class NodeGpiosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_gpio_params
       params.require(:node_gpio).permit(:hostname, :location, :serialNumber, :macAddress, :ipAddress, :subnetmask,
-      gpio_terminals_attributes: [:id, :_destroy, :name, :pin, :ioDirection, :lwChannel, :description, :notes, :node_gpio_id]
+      gpio_terminals_attributes: [:id, :_destroy, :name, :pin, :ioDirection, :lwchannel, :description, :notes, :node_gpio_id]
     )
     end
 end

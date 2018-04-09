@@ -1,0 +1,46 @@
+%p
+#notice= notice
+
+%p
+  %h1 Hostname: #{ @node_gpio.hostname }
+
+%p
+  %b Location:
+  = @node_gpio.location
+%p
+  %b IP Address:
+  = @node_gpio.ipAddress
+
+
+%h3 Terminals
+%hr
+#ins
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
+    %tr
+      %th Name on Network
+      %th GPIO Pin
+      %th Description
+      %th Livewire Channel
+      %th Notes
+
+
+  %tbody
+    - @node_gpio.gpio_terminals.each do |terminals|
+      %tr
+        %td=terminals.name
+        %td=terminals.pin
+        %td=terminals.description
+        %td=terminals.lwchannel
+        %td=terminals.notes
+
+
+= link_to 'Edit', edit_node_gpio_path(@node_gpio)
+\|
+= link_to 'Back', nodes_path
+%h2 Change History
+%hr
+%p note: only the 5 most recent changes are displayed on this page.
+%p= link_to 'Click Here for full history', full_history_nodes_gpio_path
+#audited
+=render 'history'

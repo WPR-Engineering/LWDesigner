@@ -8,6 +8,18 @@ class HistoryController < ApplicationController
     puts @node
 
     @node_id = Node.find(params[:node_id])
+
+    audit_change = @node_id.own_and_associated_audits
+    audit_select_change = audit_change.find(params[:audit_id])
+    @audit_show_change = audit_select_change.audited_changes
+  end
+
+  def diff_gpio
+    @nodes = NodeGpio.all
+
+    @node_id = NodeGpio.find(params[:node_gpio_id])
+
+    puts @node_id
     audit_change = @node_id.own_and_associated_audits
     audit_select_change = audit_change.find(params[:audit_id])
     @audit_show_change = audit_select_change.audited_changes

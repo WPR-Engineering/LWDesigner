@@ -2,13 +2,21 @@
 #notice= notice
 
 %p
-  %h1 Name: #{ @node.hostname }
+  %h1 Hostname: #{ @node.hostname }
 
 %p
   %b Location:
   = @node.location
+%p
+  %b IP Address:
+  = @node.ipAddress
+%p
+  %b Mode:
+  = @node.mode
+
 
 %h3 Inputs
+%hr
 #ins
 %table{:class => "table"}
   %thead{:style => "text-align: left"}
@@ -22,6 +30,7 @@
       %th Disabled
       %th Notes
 
+
   %tbody
     - @node.node_inputs.each do |node_input|
       %tr
@@ -34,7 +43,9 @@
         %td=node_input.disabled
         %td=node_input.notes
 
+
 %h3 Outputs
+%hr
 #outs
 %table{:class => "table"}
   %thead{:style => "text-align: left"}
@@ -60,8 +71,9 @@
 = link_to 'Edit', edit_node_path(@node)
 \|
 = link_to 'Back', nodes_path
-
 %h2 Change History
-%p note: this is only the 5 most recent changes. If you  need to see further into the past on this element please click the link at the bottom of the page
+%hr
+%p note: only the 5 most recent changes are displayed on this page.
+%p= link_to 'Click Here for full history', full_history_node_path
 #audited
 = render 'history'

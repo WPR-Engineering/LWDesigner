@@ -1,0 +1,16 @@
+%h1 Changes
+
+%table{:class => "table"}
+  %thead{:style => "text-align: left; font-weight: bold"}
+    %tr
+      %th paramiter
+      %th was
+      %th changed to
+
+  %tbody
+    - @audit_show_change.each do |key, value|
+      %tr
+
+        %td=key
+        %td=value[0]
+        %td=value[1]

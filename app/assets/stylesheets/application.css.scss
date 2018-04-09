@@ -55,8 +55,11 @@ a {
 
   vertical-align: middle;
 
+  &:link {
+    color: $link-color;
+  }
   &:visited {
-    color: #000000;
+    color: $link-color;
   }
 
   &:hover {
