@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   resources :nodes
 
   resources :nodes do
-    member { get 'full_history'}
-
+    member do
+      get :full_history, to: 'nodes#full_history'
+    end
   end
+
 
   resources :nodes do
     resources :audits, param: :audit_id do

@@ -1,3 +1,6 @@
+%h1 You are viewing the full change history of #{ @nodes.hostname }
+
+
 %table{:class => "table"}
   %thead
     %tr
@@ -9,7 +12,7 @@
       %th Difference
 
   %tbody{:style => "text-align: center"}
-    - @audits.each do |rev|
+    - @nodes.own_and_associated_audits.each do |rev|
       %tr
 
         %td=find_change_user(rev.user_id)
@@ -17,4 +20,3 @@
         %td=rev.action
         %td=rev.auditable_type
         %td=rev.version
-      

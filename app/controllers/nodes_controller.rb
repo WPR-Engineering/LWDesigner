@@ -21,11 +21,6 @@ class NodesController < ApplicationController
   def edit
   end
 
-  def full_history
-    @node = Node.all
-  end
-
-
   # POST /nodes
   # POST /nodes.json
   def create
@@ -70,12 +65,15 @@ class NodesController < ApplicationController
 
   end
 
+  def full_history
+    @nodes = Node.find(params[:id])
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_node
       @node = Node.find(params[:id])
-
-      @audits = @node_id.own_and_associated_audits
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
