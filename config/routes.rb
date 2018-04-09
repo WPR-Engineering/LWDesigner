@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
+  resources :qors
   resources :networkings
   resources :cables
   root to: 'dashboard#index'
 
   resources :node_gpios
   resources :power_stations
+  resources :nodes
+
   resources :nodes do
-    resources :audits do
+    member { get 'full_history'}
+
+  end
+
+  resources :nodes do
+    resources :audits, param: :audit_id do
       member do
         get :diff, to: 'history#diff'
       end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408211750) do
+ActiveRecord::Schema.define(version: 20180408232420) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(version: 20180408211750) do
     t.integer "powerstation_id"
     t.index ["node_gpio_id"], name: "index_gpio_terminals_on_node_gpio_id"
     t.index ["powerstation_id"], name: "index_gpio_terminals_on_powerstation_id"
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "networkings", force: :cascade do |t|
@@ -142,6 +147,17 @@ ActiveRecord::Schema.define(version: 20180408211750) do
     t.string "macAddress"
     t.string "ipAddress"
     t.string "subnetmask"
+    t.string "serialNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "qors", force: :cascade do |t|
+    t.string "hostname"
+    t.string "location"
+    t.string "macAddress"
+    t.string "ipAddress"
+    t.string "subnetMask"
     t.string "serialNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
