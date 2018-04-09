@@ -1,9 +1,10 @@
 class NodeOutput < ApplicationRecord
+  searchkick
   NUMBER_OF_PERMITTED_INPUTS = 4
   MONO_INPUTS = 8
   belongs_to :node
   validate :validate_output_limit
-  
+
   audited associated_with: :node
 
   def validate_output_limit

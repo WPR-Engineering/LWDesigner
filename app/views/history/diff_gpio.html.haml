@@ -8,9 +8,9 @@
       %th changed to
 
   %tbody
-    - @audit_show_change.each do |key, value|
+    = @audit_gpio_show_change.each do |key, shit|
       %tr
 
         %td=key
-        %td=value[0]
-        %td=value[1]
+        %td=shit[0]
+        %td=shit[1]

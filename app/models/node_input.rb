@@ -1,4 +1,5 @@
 class NodeInput < ApplicationRecord
+  searchkick
   NUMBER_OF_PERMITTED_INPUTS = 4
   MONO_INPUTS = 8
   belongs_to :node

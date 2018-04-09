@@ -12,18 +12,16 @@ class Node < ApplicationRecord
 
   after_commit :reindex_stuff
 
-  def search_data
-    {
-      keyword: hostname,
-      location: location
-    }
-  end
+
 
 
   private
 
   def reindex_stuff
+    puts "reindexing"
     Node.reindex
+    NodeInput.reindex
+    NodeOutput.reindex
   end
 
 end
