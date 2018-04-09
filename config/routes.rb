@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   end
 
   #GPIO difference path
-  resources :nodes_gpios do
+  resources :node_gpios do
     member do
-      get :full_history, to: 'nodes_gpios#full_history'
+      get :full_history, to: 'node_gpios#full_history'
     end
     resources :audits, param: :audit_id do
       member do

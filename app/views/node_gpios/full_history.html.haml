@@ -12,7 +12,7 @@
       %th Difference
 
   %tbody{:style => "text-align: center"}
-    - @nodes.own_and_associated_audits.each do |rev|
+    - @node_gpio.own_and_associated_audits.each do |rev|
       %tr
 
         %td=find_change_user(rev.user_id)
@@ -20,4 +20,4 @@
         %td=rev.action
         %td=rev.auditable_type
         %td=rev.version
-        %td= link_to 'Diff', diff_node_audit_path(@nodes, rev.id)
+        %td= link_to 'Diff', diff_gpio_node_gpio_audit_path(@node_gpio, rev.id)

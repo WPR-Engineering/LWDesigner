@@ -66,7 +66,7 @@ class NodeGpiosController < ApplicationController
   end
 
   def full_history
-    @nodes = NodeGpio.find(params[:id])
+    @node_gpio = NodeGpio.find(params[:id])
   end
 
   private
