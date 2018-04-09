@@ -3,7 +3,7 @@ class NodeInput < ApplicationRecord
   MONO_INPUTS = 8
   belongs_to :node
   validate :validate_input_limit
-
+  audited associated_with: :node
 
 
   private

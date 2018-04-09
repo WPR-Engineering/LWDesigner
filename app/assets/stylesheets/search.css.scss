@@ -1,0 +1,18 @@
+// Place all the styles related to the Search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.search-results-container {
+  width: 100%;
+}
+
+.search-result {
+  background-color: #CCC;
+
+  margin: .3em;
+
+  padding: 1em;
+
+  a {
+    font-size: 1.4em;
+  }
+}

@@ -1,27 +1,67 @@
-%p#notice= notice
+%p
+#notice= notice
 
 %p
-  %b Name:
-  = @node.hostname
+  %h1 Name: #{ @node.hostname }
 
 %p
   %b Location:
   = @node.location
 
-%div{:class => "table1"}
-  %h3 Inputs
-  #ins
-  - @node.node_inputs.each do |node_input|
-    %p{:class => "input"}= node_input.name
-    %p{:class => "input"}= node_input.notes
+%h3 Inputs
+#ins
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
+    %tr
+      %th Name on Network
+      %th Detail
+      %th Livewire Channel
+      %th Share Status
+      %th Source Mode
+      %th gain
+      %th Disabled
+      %th Notes
 
+  %tbody
+    - @node.node_inputs.each do |node_input|
+      %tr
+        %td=node_input.name
+        %td=node_input.inputDescription
+        %td=node_input.lwChannel
+        %td=node_input.shared
+        %td=node_input.sourceMode
+        %td=node_input.gain
+        %td=node_input.disabled
+        %td=node_input.notes
 
-  %h3 Outputs
-  #ins
-  - @node.node_outputs.each do |node_output|
-    %p{:class => "input"}= node_output.outputDescription
-    %p{:class => "input"}= node_output.notes
+%h3 Outputs
+#outs
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
+    %tr
+      %th Connected to
+      %th Detail
+      %th Subscription
+      %th Mode
+      %th Output Gain
+      %th notes
+
+  %tbody
+    - @node.node_outputs.each do |node_output|
+      %tr
+        %td=node_output.destination
+        %td=node_output.outputDescription
+        %td=node_output.selectedChannel
+        %td=node_output.mode
+        %td=node_output.gain
+        %td=node_output.notes
+
 
 = link_to 'Edit', edit_node_path(@node)
 \|
 = link_to 'Back', nodes_path
+
+%h2 Change History
+%p note: this is only the 5 most recent changes. If you  need to see further into the past on this element please click the link at the bottom of the page
+#audited
+= render 'history'

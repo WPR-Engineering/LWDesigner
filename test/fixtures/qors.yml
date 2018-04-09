@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hostname: MyString
+  location: MyString
+  macAddress: MyString
+  ipAddress: MyString
+  subnetMask: MyString
+  serialNumber: MyString
+
+two:
+  hostname: MyString
+  location: MyString
+  macAddress: MyString
+  ipAddress: MyString
+  subnetMask: MyString
+  serialNumber: MyString

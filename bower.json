@@ -1,0 +1,22 @@
+{
+  "name": "lwdesigner",
+  "description": "Livewire Docs",
+  "main": "",
+  "authors": [
+    "Eric Bartos <djbartos93@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/WPR-Engineering/LWDesigner",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "colors": "^3.0.0",
+    "Ionicons": "ionicons#^2.0.1"
+  }
+}

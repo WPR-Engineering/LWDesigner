@@ -4,6 +4,13 @@ This application will help you in managing and documenting your new (or existing
 
 this application is built with ruby on rails, and uses a pgsql database for production deployments.
 
+##Config
+
+Searchkick is used for global search, this requires elasticsearch. if you are just doing a test or development install and you are on mac jsut `brew install elasticsearch` for production its reccomended to have elasticsearch installed on another machine or if you have enough memory you can probably run it on the same machien as LWDesigner.
+
+If you are running this in production, you will have to go into /config/initializers/elasticsearch.rb.example, put your hostname (:9200 for default port) in and rename to elasticsearch.rb  this will set the correct hostname for elasticsearch.
+
+
 ## Current Features
 * Node Documentation
   - hostname
@@ -15,19 +22,28 @@ this application is built with ruby on rails, and uses a pgsql database for prod
 
 # TO DO
 Core feature that still need to be completed
-- [ ] Global Search
+- [ ] Change tracking / Version control
+- [ ] Global Search - almost done!
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
-- [ ] support for powerstation and QOR I/O
-- [ ] Proper GPIO node documentation
+- [ ] support for powerstation and QOR I/O - ** in progress **
+- [x] Proper GPIO node documentation - ** in progress **
 - [ ] Button pannels and XY selectors
-- [ ] Pathfinder stuff (maybe)
-- [ ] Serial numbers
-- [ ] mac addresses
+- [ ] ~~Pathfinder stuff (maybe)~~
+- [ ] Serial numbers - ** in progress **
+- [ ] mac addresses - ** in progress **
+- [x] add header
+  - [x] create header
+  - [ ] style header
+- [ ] add dashbaord
+  - [x] create dashbaord
+  - [ ] style dashboard
+- [x] Authentication
+
 
 ## Wishlist
-Features that I would like to impliment some time
+Features that I would like to impliment eventually
 - [ ] DNS management
   - [ ] update windows DNS server from hostname
   - [ ] update BIND from hostname

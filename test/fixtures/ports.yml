@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  type: 
+  description: MyString
+  networking: one
+
+two:
+  number: 1
+  type: 
+  description: MyString
+  networking: two

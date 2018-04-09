@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LWDesigner</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="login-layout">
+  <header id="login-header">
+    <div class="flex">
+      <div class="spacer"></div>
+      <%= link_to 'LWDesigner', root_path, class: 'brand' %>
+      <div class="spacer"></div>
+    </div>
+  </header>
+  <div id="notifications">
+    <% flash.each do |name, msg| %>
+      <div class="form-signin">
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, :class => "alert alert-#{name}" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <main>
+    <%= yield %>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

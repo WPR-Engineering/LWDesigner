@@ -1,5 +1,5 @@
 class Node < ApplicationRecord
-  NUMBER_OF_PERMITTED_INPUTS = 4
+  searchkick
   has_many :node_inputs, inverse_of: :node
   has_many :node_outputs, inverse_of: :node
   accepts_nested_attributes_for :node_inputs, reject_if: :all_blank, allow_destroy: true
@@ -7,9 +7,23 @@ class Node < ApplicationRecord
   validates :mode, :hostname, :location, presence: true
   validates :ipAddress, length: { in: 7..15 }
 
-private
+  audited
+  has_associated_audits
 
- def validate_input_limit
-  raise Exception.new if node_inputs.size > NUMBER_OF_PERMITTED_INPUTS
- end
+  after_commit :reindex_stuff
+
+  def search_data
+    {
+      keyword: hostname,
+      location: location
+    }
+  end
+
+
+  private
+
+  def reindex_stuff
+    Node.reindex
+  end
+
 end

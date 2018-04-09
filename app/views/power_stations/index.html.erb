@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Power Stations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hostname</th>
+      <th>Location</th>
+      <th>Macaddress</th>
+      <th>Ipaddress</th>
+      <th>Subnetmask</th>
+      <th>Serialnumber</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @power_stations.each do |power_station| %>
+      <tr>
+        <td><%= power_station.hostname %></td>
+        <td><%= power_station.location %></td>
+        <td><%= power_station.macAddress %></td>
+        <td><%= power_station.ipAddress %></td>
+        <td><%= power_station.subnetmask %></td>
+        <td><%= power_station.serialNumber %></td>
+        <td><%= link_to 'Show', power_station %></td>
+        <td><%= link_to 'Edit', edit_power_station_path(power_station) %></td>
+        <td><%= link_to 'Destroy', power_station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Power Station', new_power_station_path %>

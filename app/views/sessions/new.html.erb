@@ -1,0 +1,11 @@
+<%= form_tag sessions_path, id: 'login-form' do %>
+  <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+  <%= password_field_tag :password, params[:password], :placeholder => "Password" %>
+  <div class="flex">
+    <div class="spacer"></div>
+    <%= submit_tag "Log In", class: 'btn btn--s btn--gray' %>
+    <div class="spacer"></div>
+    <%= link_to 'Sign Up', new_user_path, class: 'btn btn--s btn--gray' %>
+    <div class="spacer"></div>
+  </div>
+<% end %>

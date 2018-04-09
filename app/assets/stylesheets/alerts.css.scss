@@ -1,0 +1,48 @@
+.alert {
+  display: inline-block;
+  min-width: 16em;
+  padding: .5em;
+  margin: 1em auto;
+  vertical-align: middle;
+
+  &.alert-notice {
+    border: solid 2px #0074D9;
+    color: #0074D9;
+    border-radius: .3em;
+  }
+
+  &.alert-alert {
+    border: solid 2px #FF851B;
+    color: #FF851B;
+    border-radius: .3em;
+  }
+
+  &.alert-danger {
+    border: solid 2px #FF4136;
+    color: #FF4136;
+    border-radius: .3em;
+  }
+}
+
+#error_explanation {
+  display: inline-block;
+  min-width: 16em;
+  padding: .5em;
+  margin: 1em auto;
+  vertical-align: middle;
+
+  border: solid 2px #FF4136;
+  color: #FF4136;
+  border-radius: .3em;
+}
+
+.field_with_errors {
+  display: inline;
+
+  color: #FF4136;
+
+  input[type="text"], input[type="email"] {
+    border: solid 2px #FF4136;
+    border-radius: .3em;
+  }
+}

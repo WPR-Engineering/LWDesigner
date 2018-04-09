@@ -1,0 +1,2 @@
+class Cable < ApplicationRecord
+end

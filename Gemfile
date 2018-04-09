@@ -23,12 +23,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'nprogress-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -60,9 +60,32 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #nested forms
 gem 'cocoon'
+
 #quick form making
 gem 'simple_form'
+
 #i dont like erb
 gem 'haml'
+
 #for cocoon to work right
 gem 'jquery-rails'
+
+#global Search
+gem 'searchkick', github: "ankane/searchkick"
+gem 'elasticsearch'
+
+#style gems
+gem 'font-awesome-sass'
+gem 'ionicons-rails'
+
+#authentication
+gem 'cancancan'
+gem 'bcrypt'
+
+# Performance monitoring
+gem 'rack-mini-profiler'
+gem 'flamegraph'
+gem 'stackprof'
+
+#auditing
+gem 'audited', github: "collectiveidea/audited", :branch => "master"

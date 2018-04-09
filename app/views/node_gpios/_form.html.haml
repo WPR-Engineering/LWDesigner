@@ -1,0 +1,24 @@
+%div{:class => "table1"}
+  = simple_form_for @node_gpio do |f|
+    -if @node_gpio.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@node_gpio.errors.count, "error")} prohibited this project from being saved:"
+        %ul
+          - @node_gpio.errors.full_messages.each do |msg|
+            %li= msg
+    = f.error_notification
+    = f.input :hostname
+    = f.input :location, as: :string
+    = f.input :serialNumber
+    = f.input :macAddress
+    = f.input :ipAddress
+    = f.input :subnetmask
+
+
+    %h3 GPIO Terminals (Both input and output listed here)
+    #tasks
+      = f.simple_fields_for :gpio_terminals do |gpio_terminal|
+        = render 'gpio_terminal_fields', f: gpio_terminal
+      .links
+        = link_to_add_association 'add Input', f, :gpio_terminals
+    = f.submit

@@ -1,0 +1,2 @@
+class Qor < ApplicationRecord
+end
