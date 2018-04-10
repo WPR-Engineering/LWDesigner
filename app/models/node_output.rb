@@ -1,12 +1,23 @@
 class NodeOutput < ApplicationRecord
-  searchkick
+  #associations
+  belongs_to :node
+
+  #validations variables
   NUMBER_OF_PERMITTED_INPUTS = 4
   MONO_INPUTS = 8
-  belongs_to :node
+
+  #custom validataion
   validate :validate_output_limit
 
+  #change history
   audited associated_with: :node
 
+  #search
+  searchkick
+
+private
+
+  #custom validation for number of I/O on each node in different modes
   def validate_output_limit
     if node.mode == "Stereo" && node.node_outputs.size > NUMBER_OF_PERMITTED_INPUTS
       node.errors.add(:base, :invalid, message: "Only 4 outputs are allowed in stereo mode, please remove addditional outputs or switch to mono or mixed")

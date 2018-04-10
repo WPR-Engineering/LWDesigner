@@ -1,8 +1,9 @@
 %p
-  Terminal Name:
+  GPIO Terminal Name:
   \#{gpio_terminal.notes}
 %p
   This search results page needs work. find me in app/views/gpio_terminals/_gpio_terminal.html.erb
 %p
-  Location:
-%p
+  - node_id = gpio_terminal.node_gpio_id
+  = link_to "Associated GPIO Node", node_gpio_path(node_id)
+  %p

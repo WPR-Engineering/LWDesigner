@@ -1,7 +1,7 @@
 %p#notice= notice
 %h1 Node Gpios
-%table
-  %thead
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
     %tr
       %th Hostname
       %th Location
@@ -23,4 +23,4 @@
         %td= link_to 'Edit', edit_node_gpio_path(node_gpio)
         %td= link_to 'Destroy', node_gpio, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Node Gpio', new_node_gpio_path
+= link_to 'New GPIO Node', new_node_gpio_path, :class => "btn btn--s btn--gray"

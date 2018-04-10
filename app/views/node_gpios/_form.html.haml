@@ -10,8 +10,8 @@
     = f.input :hostname
     = f.input :location, as: :string
     = f.input :serialNumber
-    = f.input :macAddress
-    = f.input :ipAddress
+    = f.input :macAddress, label: 'MAC Address'
+    = f.input :ipAddress, label: 'IP Address'
     = f.input :subnetmask
 
 
@@ -20,5 +20,6 @@
       = f.simple_fields_for :gpio_terminals do |gpio_terminal|
         = render 'gpio_terminal_fields', f: gpio_terminal
       .links
-        = link_to_add_association 'add Input', f, :gpio_terminals
-    = f.submit
+        = link_to_add_association 'Add GPIO Terminal', f, :gpio_terminals
+    %br
+    = f.submit nil, :class => "btn btn--s btn--gray"

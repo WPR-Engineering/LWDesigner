@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408212604) do
+ActiveRecord::Schema.define(version: 20180410164332) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180408212604) do
     t.datetime "updated_at", null: false
     t.string "ioDirection"
     t.integer "powerstation_id"
+    t.integer "port"
     t.index ["node_gpio_id"], name: "index_gpio_terminals_on_node_gpio_id"
     t.index ["powerstation_id"], name: "index_gpio_terminals_on_powerstation_id"
   end

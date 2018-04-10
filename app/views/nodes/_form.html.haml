@@ -27,4 +27,5 @@
         = render 'node_output_fields', f: node_output
       .links
         = link_to_add_association 'add Output', f, :node_outputs
-      = f.submit
+      %br
+      = f.submit nil, :class => "btn btn--s btn--gray"

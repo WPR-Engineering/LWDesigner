@@ -1,10 +1,8 @@
 %p
-  hostname:
-  \#{node.hostname}
-%p
-  Serial Number:
-  Coming soon!
+  = link_to node.hostname
 %p
   Location:
+  =node.location
 %p
-  = node.location
+  IP Address
+  =node.ipAddress

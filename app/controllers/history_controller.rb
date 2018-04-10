@@ -13,21 +13,32 @@ class HistoryController < ApplicationController
     audit_change = @node_id.own_and_associated_audits
     audit_select_change = audit_change.find(params[:audit_id])
     @audit_show_change = audit_select_change.audited_changes
+
   end
 
   def diff_gpio
     @nodes = NodeGpio.all
-    puts @node
 
     @node_id = NodeGpio.find(params[:node_gpio_id])
 
     audit_change = @node_id.own_and_associated_audits
     audit_select_change = audit_change.find(params[:audit_id])
     @audit_show_change = audit_select_change.audited_changes
+
+    Rails.logger.debug "DEBUG: #{diff_debug}" if Rails.logger.debug?
+
+    @audit_version = audit_select_change.version
+
   end
 
+  def diff_debug
 
-  
+    @audit_show_change.each do |key, value|
+      puts key
+      puts value[1..20]
+    end
+  end
+
 
   private
 

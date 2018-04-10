@@ -1,6 +1,10 @@
 class GpioTerminal < ApplicationRecord
-  searchkick
+  #associations
   belongs_to :node_gpio
 
+  #change history
   audited associated_with: :node_gpio
+
+  #search
+  searchkick
 end

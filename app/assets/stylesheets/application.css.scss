@@ -85,3 +85,10 @@ a {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
+
+thead{
+  font-weight: bold;
+  th{
+    padding-bottom: 10px;
+  }
+}

@@ -1,7 +1,7 @@
 %p#notice= notice
 %h1 Nodes
-%table
-  %thead
+%table{:class => "table"}
+  %thead{:style => "text-align: left"}
     %tr
       %th Hostname
       %th Location
@@ -21,4 +21,4 @@
         %td= link_to 'Edit', edit_node_path(node)
         %td= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Node', new_node_path
+= link_to 'New Node', new_node_path, :class => "btn btn--s btn--gray"
