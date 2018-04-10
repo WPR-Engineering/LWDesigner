@@ -1,0 +1,11 @@
+.nested-fields
+  = f.error_notification
+  = f.input :name
+  = f.input :pin, label: "Node Pin", collection: 1..5
+  = f.input :port, label: "Node Port", collection: 1..6
+  = f.input :ioDirection, collection: ["Input (to network)", "Output (to device)"], label: "I/O Direction"
+  = f.input :lwchannel, label: "Livewire Channel"
+  = f.input :description, as: :string, label: 'Device or Description'
+  = f.input :notes, as: :string
+  = link_to_remove_association "Remove Terminal", f, :data => { :confirm => "Are you sure you want to remove this input? This action cannot be undone!!" }
+%br

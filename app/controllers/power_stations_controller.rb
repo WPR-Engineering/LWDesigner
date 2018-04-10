@@ -69,6 +69,8 @@ class PowerStationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def power_station_params
-      params.require(:power_station).permit(:hostname, :location, :macAddress, :ipAddress, :subnetmask, :serialNumber)
+      params.require(:power_station).permit(:hostname, :location, :macAddress, :ipAddress, :subnetmask, :serialNumber,
+      gpio_terminals_attributes: [:id, :_destroy, :name, :port, :pin, :ioDirection, :lwchannel, :description, :notes, :node_gpio_id]
+    )
     end
 end

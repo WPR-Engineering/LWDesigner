@@ -11,6 +11,7 @@ class NodeOutput < ApplicationRecord
 
   #change history
   audited associated_with: :node
+  audited associated_with: :power_station
 
   #search
   searchkick

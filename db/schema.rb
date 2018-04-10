@@ -34,17 +34,6 @@ ActiveRecord::Schema.define(version: 20180410193806) do
     t.index ["user_id", "user_type"], name: "user_index"
   end
 
-  create_table "cables", force: :cascade do |t|
-    t.string "code"
-    t.integer "number"
-    t.string "type"
-    t.string "color"
-    t.string "termination"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "gpio_terminals", force: :cascade do |t|
     t.string "name"
     t.integer "pin"
@@ -55,10 +44,10 @@ ActiveRecord::Schema.define(version: 20180410193806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ioDirection"
-    t.integer "powerstation_id"
+    t.integer "power_station_id"
     t.integer "port"
     t.index ["node_gpio_id"], name: "index_gpio_terminals_on_node_gpio_id"
-    t.index ["powerstation_id"], name: "index_gpio_terminals_on_powerstation_id"
+    t.index ["power_station_id"], name: "index_gpio_terminals_on_power_station_id"
   end
 
   create_table "networkings", force: :cascade do |t|

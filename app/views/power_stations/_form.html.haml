@@ -1,11 +1,26 @@
+%div{:class => "table"}
 = simple_form_for(@power_station) do |f|
-  = f.error_notification
-  .form-inputs
+
+  = simple_form_for @power_station do |f|
+    -if @power_station.errors.any?
+      #error_explanation
+        
+        %ul
+          - @power_station.errors.full_messages.each do |msg|
+            %li= msg
     = f.input :hostname
     = f.input :location
     = f.input :macAddress
     = f.input :ipAddress
     = f.input :subnetmask
     = f.input :serialNumber
-  .form-actions
-    = f.button :submit
+
+    %h3 GPIO Terminals (Both input and output listed here)
+    #tasks
+      = f.simple_fields_for :gpio_terminals do |gpio_terminal|
+        = render 'gpio_terminal_fields', f: gpio_terminal
+      .links
+        = link_to_add_association 'Add GPIO Terminal', f, :gpio_terminals
+    %br
+
+      = f.submit nil, :class => "btn btn--s btn--gray"
