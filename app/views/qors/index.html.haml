@@ -1,0 +1,26 @@
+%p#notice= notice
+%h1 Qors
+%table
+  %thead
+    %tr
+      %th Hostname
+      %th Location
+      %th Macaddress
+      %th Ipaddress
+      %th Subnetmask
+      %th Serialnumber
+      %th{:colspan => "3"}
+  %tbody
+    - @qors.each do |qor|
+      %tr
+        %td= qor.hostname
+        %td= qor.location
+        %td= qor.macAddress
+        %td= qor.ipAddress
+        %td= qor.subnetMask
+        %td= qor.serialNumber
+        %td= link_to 'Show', qor
+        %td= link_to 'Edit', edit_qor_path(qor)
+        %td= link_to 'Destroy', qor, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Qor', new_qor_path

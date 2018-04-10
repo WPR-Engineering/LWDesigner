@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Hostname:
+  = @networking.hostname
+%p
+  %strong Type:
+  = @networking.type
+%p
+  %strong Model:
+  = @networking.model
+%p
+  %strong Macaddress:
+  = @networking.macAddress
+%p
+  %strong Ipaddress:
+  = @networking.ipAddress
+%p
+  %strong Subnetmask:
+  = @networking.subnetMask
+%p
+  %strong Portcount:
+  = @networking.portCount
+= link_to 'Edit', edit_networking_path(@networking)
+|
+= link_to 'Back', networkings_path

@@ -1,0 +1,26 @@
+%p#notice= notice
+%h1 Node Gpios
+%table
+  %thead
+    %tr
+      %th Hostname
+      %th Location
+      %th Serialnumber
+      %th Macaddress
+      %th Ipaddress
+      %th Subnetmask
+      %th{:colspan => "3"}
+  %tbody
+    - @node_gpios.each do |node_gpio|
+      %tr
+        %td= node_gpio.hostname
+        %td= node_gpio.location
+        %td= node_gpio.serialNumber
+        %td= node_gpio.macAddress
+        %td= node_gpio.ipAddress
+        %td= node_gpio.subnetmask
+        %td= link_to 'Show', node_gpio
+        %td= link_to 'Edit', edit_node_gpio_path(node_gpio)
+        %td= link_to 'Destroy', node_gpio, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Node Gpio', new_node_gpio_path

@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title LWDesigner
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header#header
+      %section#header-sidebar
+        %div
+          = link_to 'LWDesigner', root_path, class: 'brand'
+      %section#header-main
+        = render "shared/main_header"
+    %main
+      %section#sidebar
+        = render "shared/sidebar"
+      %section#main
+        #main-container
+          = yield
+    %footer

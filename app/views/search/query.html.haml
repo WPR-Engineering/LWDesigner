@@ -1,0 +1,7 @@
+%h1 Search Results
+%ul.search-results-container
+  - @records.each do |record|
+    %li.search-result
+      = render record
+  - end.empty? and begin
+    %li No Results

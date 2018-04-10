@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Hostname:
+  = @power_station.hostname
+%p
+  %strong Location:
+  = @power_station.location
+%p
+  %strong Macaddress:
+  = @power_station.macAddress
+%p
+  %strong Ipaddress:
+  = @power_station.ipAddress
+%p
+  %strong Subnetmask:
+  = @power_station.subnetmask
+%p
+  %strong Serialnumber:
+  = @power_station.serialNumber
+= link_to 'Edit', edit_power_station_path(@power_station)
+|
+= link_to 'Back', power_stations_path

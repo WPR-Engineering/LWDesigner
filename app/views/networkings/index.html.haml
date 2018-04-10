@@ -1,0 +1,28 @@
+%p#notice= notice
+%h1 Networkings
+%table
+  %thead
+    %tr
+      %th Hostname
+      %th Type
+      %th Model
+      %th Macaddress
+      %th Ipaddress
+      %th Subnetmask
+      %th Portcount
+      %th{:colspan => "3"}
+  %tbody
+    - @networkings.each do |networking|
+      %tr
+        %td= networking.hostname
+        %td= networking.type
+        %td= networking.model
+        %td= networking.macAddress
+        %td= networking.ipAddress
+        %td= networking.subnetMask
+        %td= networking.portCount
+        %td= link_to 'Show', networking
+        %td= link_to 'Edit', edit_networking_path(networking)
+        %td= link_to 'Destroy', networking, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Networking', new_networking_path

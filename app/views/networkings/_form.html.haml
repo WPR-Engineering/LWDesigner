@@ -1,0 +1,12 @@
+= simple_form_for(@networking) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :hostname
+    = f.input :type
+    = f.input :model
+    = f.input :macAddress
+    = f.input :ipAddress
+    = f.input :subnetMask
+    = f.input :portCount
+  .form-actions
+    = f.button :submit

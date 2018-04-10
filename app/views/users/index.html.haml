@@ -1,0 +1,29 @@
+%h1 Listing Users
+%table
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Email
+      %th Phone
+      %th Org
+      %th External ID
+      %th Role
+      %th Active
+      %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.first_name, edit_user_path(user)
+        %td= link_to user.last_name, edit_user_path(user)
+        %td= link_to user.email, edit_user_path(user)
+        %td= link_to user.phone, edit_user_path(user)
+        %td= user.org
+        %td= user.external_id
+        %td= user.role.humanize
+        %td= user.active.to_s.humanize
+        %td= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= paginate @users
+%br/
+= link_to 'New User', new_user_path, class: 'btn btn--s btn--gray'

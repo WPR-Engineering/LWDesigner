@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Hostname:
+  = @qor.hostname
+%p
+  %strong Location:
+  = @qor.location
+%p
+  %strong Macaddress:
+  = @qor.macAddress
+%p
+  %strong Ipaddress:
+  = @qor.ipAddress
+%p
+  %strong Subnetmask:
+  = @qor.subnetMask
+%p
+  %strong Serialnumber:
+  = @qor.serialNumber
+= link_to 'Edit', edit_qor_path(@qor)
+|
+= link_to 'Back', qors_path

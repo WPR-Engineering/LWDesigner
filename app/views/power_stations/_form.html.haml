@@ -1,0 +1,11 @@
+= simple_form_for(@power_station) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :hostname
+    = f.input :location
+    = f.input :macAddress
+    = f.input :ipAddress
+    = f.input :subnetmask
+    = f.input :serialNumber
+  .form-actions
+    = f.button :submit
