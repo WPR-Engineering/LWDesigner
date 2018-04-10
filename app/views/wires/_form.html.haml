@@ -1,0 +1,28 @@
+= form_for @wire do |f|
+  - if @wire.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wire.errors.count, "error")} prohibited this wire from being saved:"
+      %ul
+        - @wire.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :number
+    = f.text_field :number
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :color
+    = f.text_field :color
+  .field
+    = f.label :termination
+    = f.text_field :termination
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'

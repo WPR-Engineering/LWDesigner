@@ -1,0 +1,2 @@
+module WiresHelper
+end

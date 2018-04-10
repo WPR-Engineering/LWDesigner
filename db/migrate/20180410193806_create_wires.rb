@@ -1,8 +1,8 @@
-class CreateCables < ActiveRecord::Migration[5.1]
+class CreateWires < ActiveRecord::Migration[5.1]
   def change
-    create_table :cables do |t|
+    create_table :wires do |t|
       t.string :code
-      t.integer :number
+      t.string :number
       t.string :type
       t.string :color
       t.string :termination

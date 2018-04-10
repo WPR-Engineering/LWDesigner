@@ -1,0 +1,31 @@
+%h1 Listing wires
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Number
+      %th Type
+      %th Color
+      %th Termination
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @wires.each do |wire|
+      %tr
+        %td= wire.code
+        %td= wire.number
+        %td= wire.type
+        %td= wire.color
+        %td= wire.termination
+        %td= wire.description
+        %td= link_to 'Show', wire
+        %td= link_to 'Edit', edit_wire_path(wire)
+        %td= link_to 'Destroy', wire, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Wire', new_wire_path

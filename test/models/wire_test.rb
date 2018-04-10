@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CableTest < ActiveSupport::TestCase
+class WireTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

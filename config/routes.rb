@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :wires
   resources :qors
   resources :networkings
-  resources :cables
 
   #Root Route
   root to: 'dashboard#index'

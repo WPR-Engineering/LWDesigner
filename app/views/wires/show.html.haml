@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Code:
+  = @wire.code
+%p
+  %b Number:
+  = @wire.number
+%p
+  %b Type:
+  = @wire.type
+%p
+  %b Color:
+  = @wire.color
+%p
+  %b Termination:
+  = @wire.termination
+%p
+  %b Description:
+  = @wire.description
+
+= link_to 'Edit', edit_wire_path(@wire)
+\|
+= link_to 'Back', wires_path

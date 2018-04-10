@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410164332) do
+ActiveRecord::Schema.define(version: 20180410193806) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -178,6 +178,17 @@ ActiveRecord::Schema.define(version: 20180410164332) do
     t.string "external_id"
     t.boolean "active", default: true
     t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wires", force: :cascade do |t|
+    t.string "code"
+    t.string "number"
+    t.string "type"
+    t.string "color"
+    t.string "termination"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
