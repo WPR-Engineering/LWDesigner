@@ -1,10 +1,13 @@
 class SearchController < ApplicationController
   def query
-    @records = Node.search(params[:search], index_name: [Node.searchkick_index.name, NodeGpio.searchkick_index.name, GpioTerminal.searchkick_index.name, NodeInput.searchkick_index.name, NodeOutput.searchkick_index.name]).results
+    @records = Node.search(params[:search], index_name: [Node.searchkick_index.name, NodeGpio.searchkick_index.name,
+      GpioTerminal.searchkick_index.name,
+      NodeInput.searchkick_index.name,
+      NodeOutput.searchkick_index.name]).results
 
   #  @records.delete_if { |record| cannot? :show, record }
 
-    
+
 
     respond_to do |format|
       format.html # query.html.erb

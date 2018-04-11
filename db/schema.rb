@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410193806) do
+ActiveRecord::Schema.define(version: 20180411153717) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -137,6 +137,48 @@ ActiveRecord::Schema.define(version: 20180410193806) do
     t.string "serialNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ps_gpio_terminals", force: :cascade do |t|
+    t.string "name"
+    t.integer "pin"
+    t.text "description"
+    t.integer "lwchannel"
+    t.text "notes"
+    t.string "ioDirection"
+    t.integer "port"
+    t.integer "power_station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["power_station_id"], name: "index_ps_gpio_terminals_on_power_station_id"
+  end
+
+  create_table "ps_inputs", force: :cascade do |t|
+    t.string "name"
+    t.text "inputDescription"
+    t.integer "lwChannel"
+    t.boolean "shared"
+    t.string "sourceMode"
+    t.integer "gain"
+    t.boolean "disabled"
+    t.text "notes"
+    t.integer "power_station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["power_station_id"], name: "index_ps_inputs_on_power_station_id"
+  end
+
+  create_table "ps_outputs", force: :cascade do |t|
+    t.string "destination"
+    t.text "outputDescription"
+    t.integer "slectedChannel"
+    t.string "mode"
+    t.integer "gain"
+    t.text "notes"
+    t.integer "power_station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["power_station_id"], name: "index_ps_outputs_on_power_station_id"
   end
 
   create_table "qors", force: :cascade do |t|

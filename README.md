@@ -22,8 +22,8 @@ If you are running this in production, you will have to go into /config/initiali
 
 # TO DO
 Core feature that still need to be completed
-- [ ] Change tracking / Version control
-- [ ] Global Search - almost done!
+- [x] Change tracking / Version control
+- [x] Global Search - almost done!
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
@@ -31,14 +31,14 @@ Core feature that still need to be completed
 - [x] Proper GPIO node documentation - ** in progress **
 - [ ] Button pannels and XY selectors
 - [ ] ~~Pathfinder stuff (maybe)~~
-- [ ] Serial numbers - ** in progress **
-- [ ] mac addresses - ** in progress **
+- [x] Serial numbers - ** in progress **
+- [x] mac addresses - ** in progress **
 - [x] add header
   - [x] create header
-  - [ ] style header
+  - [x] style header
 - [ ] add dashbaord
   - [x] create dashbaord
-  - [ ] style dashboard
+  - [x] style dashboard
 - [x] Authentication
 
 
