@@ -61,6 +61,10 @@ class PowerStationsController < ApplicationController
     end
   end
 
+  def full_history
+    @power_station = PowerStation.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_power_station
@@ -70,7 +74,9 @@ class PowerStationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def power_station_params
       params.require(:power_station).permit(:hostname, :location, :macAddress, :ipAddress, :subnetmask, :serialNumber,
-      gpio_terminals_attributes: [:id, :_destroy, :name, :port, :pin, :ioDirection, :lwchannel, :description, :notes, :node_gpio_id]
+      ps_gpio_terminals_attributes: [:id, :_destroy, :name, :port, :pin, :ioDirection, :lwchannel, :description, :notes, :node_gpio_id],
+      ps_inputs_attributes: [:id, :_destroy, :name, :inputDescription, :lwChannel, :shared, :sourceMode, :gain, :disabled, :notes, :node_id],
+      ps_outputs_attributes: [:id, :_destroy, :destination, :outputDescription, :selectedChannel, :mode, :notes, :gain, :node_id]
     )
     end
 end

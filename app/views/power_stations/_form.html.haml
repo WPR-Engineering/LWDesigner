@@ -4,23 +4,36 @@
   = simple_form_for @power_station do |f|
     -if @power_station.errors.any?
       #error_explanation
-        
+
         %ul
           - @power_station.errors.full_messages.each do |msg|
             %li= msg
     = f.input :hostname
-    = f.input :location
+    = f.input :location, as: :string
     = f.input :macAddress
     = f.input :ipAddress
     = f.input :subnetmask
     = f.input :serialNumber
 
+
+    %h3 Audio Inputs
+    #tasks
+      = f.simple_fields_for :ps_inputs do |ps_input|
+        = render 'ps_input_fields', f: ps_input
+      .links
+        = link_to_add_association 'Add Audio Input', f, :ps_inputs
+    %h3 Audio Outputs
+    #tasks
+      = f.simple_fields_for :ps_outputs do |ps_output|
+        = render 'ps_output_fields', f: ps_output
+      .links
+        = link_to_add_association 'Add Audio Output', f, :ps_outputs
     %h3 GPIO Terminals (Both input and output listed here)
     #tasks
-      = f.simple_fields_for :gpio_terminals do |gpio_terminal|
-        = render 'gpio_terminal_fields', f: gpio_terminal
+      = f.simple_fields_for :ps_gpio_terminals do |gpio_terminal|
+        = render 'ps_gpio_terminal_fields', f: gpio_terminal
       .links
-        = link_to_add_association 'Add GPIO Terminal', f, :gpio_terminals
+        = link_to_add_association 'Add GPIO Terminal', f, :ps_gpio_terminals
     %br
 
       = f.submit nil, :class => "btn btn--s btn--gray"

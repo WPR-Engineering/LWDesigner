@@ -3,4 +3,7 @@ class PsInput < ApplicationRecord
 
   #change history
   audited associated_with: :power_station
+
+  #search
+  searchkick
 end

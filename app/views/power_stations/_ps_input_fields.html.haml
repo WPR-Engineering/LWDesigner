@@ -1,0 +1,11 @@
+.nested-fields
+  = f.error_notification
+  = f.input :name
+  = f.input :inputDescription, as: :string
+  = f.input :lwChannel
+  = f.input :shared, as: :select
+  = f.input :sourceMode
+  = f.input :gain
+  = f.input :disabled, as: :select
+  = f.input :notes, as: :string
+  = link_to_remove_association "remove input", f, :data => { :confirm => "Are you sure you want to remove this input? This action cannot be undone!!" }

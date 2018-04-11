@@ -1,0 +1,23 @@
+%h1 You are viewing the full change history of #{ @power_station.hostname }
+
+
+%table{:class => "table"}
+  %thead
+    %tr
+      %th Author
+      %th Date
+      %th event
+      %th Item Changed
+      %th version
+      %th Difference
+
+  %tbody{:style => "text-align: center"}
+    - @power_station.own_and_associated_audits.each do |rev|
+      %tr
+
+        %td=find_change_user(rev.user_id)
+        %td=rev.created_at.in_time_zone('America/Chicago')
+        %td=rev.action
+        %td=rev.auditable_type
+        %td=rev.version
+        %td= link_to 'Diff', diff_ps_power_station_audit_path(@power_station, rev.id)

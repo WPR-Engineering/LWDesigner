@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   #Powerstation Routes
   resources :power_stations
 
-  #gpio node differences paths
+  #powerstation node differences paths
   resources :power_stations do
     resources :audits, param: :audit_id do
       member do
@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
   end
 
-  #GPIO full history path
+  #powerstation full history path
   resources :power_stations do
     member do
       get :full_history, to: 'power_stations#full_history'

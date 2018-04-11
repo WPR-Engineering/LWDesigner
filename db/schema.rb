@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411153717) do
+ActiveRecord::Schema.define(version: 20180411213629) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(version: 20180411153717) do
   create_table "ps_outputs", force: :cascade do |t|
     t.string "destination"
     t.text "outputDescription"
-    t.integer "slectedChannel"
+    t.integer "selectedChannel"
     t.string "mode"
     t.integer "gain"
     t.text "notes"

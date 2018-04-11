@@ -13,4 +13,20 @@ class PowerStation < ApplicationRecord
   audited
   has_associated_audits
 
+  #search
+  searchkick
+  after_commit :reindex_stuff
+
+
+
+
+  private
+
+  def reindex_stuff
+    Rails.logger.debug "DEBUG: Node Reindex starting" if Rails.logger.debug?
+    PowerStation.reindex
+    PsInput.reindex
+    PsOutput.reindex
+    PsGpioTerminal.reindex
+  end
 end

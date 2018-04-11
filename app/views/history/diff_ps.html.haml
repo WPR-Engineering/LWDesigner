@@ -1,0 +1,30 @@
+- if @audit_version == 1
+  %h1 Created
+
+  %table{:class => "table"}
+    %thead{:style => "text-align: left; font-weight: bold"}
+      %tr
+        %th Paramiter
+        %th Created With
+    %tbody
+      - @audit_show_change.each do |key, value|
+        %tr
+          %td=key
+          %td=value
+
+- else
+  %h1 Changes
+
+  %table{:class => "table"}
+    %thead{:style => "text-align: left; font-weight: bold"}
+      %tr
+        %th paramiter
+        %th was
+        %th changed to
+
+    %tbody
+      - @audit_show_change.each do |key, value|
+        %tr
+          %td=key
+          %td=value[1]
+          %td=value[0]
