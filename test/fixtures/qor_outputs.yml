@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destination: MyString
+  outputDescription: MyText
+  slectedChannel: 1
+  mode: MyString
+  gain: 1
+  notes: MyText
+  belongs_to: 
+
+two:
+  destination: MyString
+  outputDescription: MyText
+  slectedChannel: 1
+  mode: MyString
+  gain: 1
+  notes: MyText
+  belongs_to: 

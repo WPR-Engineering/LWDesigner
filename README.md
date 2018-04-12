@@ -4,7 +4,7 @@ This application will help you in managing and documenting your new (or existing
 
 this application is built with ruby on rails, and uses a pgsql database for production deployments.
 
-##Config
+## Config
 
 Searchkick is used for global search, this requires elasticsearch. if you are just doing a test or development install and you are on mac jsut `brew install elasticsearch` for production its reccomended to have elasticsearch installed on another machine or if you have enough memory you can probably run it on the same machien as LWDesigner.
 
@@ -27,8 +27,9 @@ Core feature that still need to be completed
 - [ ] Global channel listing
 - [ ] show disabled channels
 - [ ] show nodes with empty inputs or output
-- [ ] support for powerstation and QOR I/O - ** in progress **
-- [x] Proper GPIO node documentation - ** in progress **
+- [x] support for powerstation I/O
+- [ ] support for QOR I/O - ** in progress **
+- [x] Proper GPIO node documentation
 - [ ] Button pannels and XY selectors
 - [ ] ~~Pathfinder stuff (maybe)~~
 - [x] Serial numbers - ** in progress **
