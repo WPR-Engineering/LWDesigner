@@ -37,6 +37,9 @@
 }
 
 #header-main, #main {
+  i {
+    color: rgb(0, 0, 0);
+  }
   width: 100% - $sidebar-width;
 }
 
@@ -242,5 +245,56 @@ main {
   &:hover ul {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+  /* STYLES GO HERE */
+
+  #hidden-sidebar{
+    width: 0;
+  }
+  main{
+
+    #main{
+      width: 100%;
+      margin-left: 0;
+    }
+
+    #main-container{
+      text-indent: 1em;
+      margin: 0em;
+    }
+
+    .sidenav{
+      height: 100%;
+      width: 0px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: 0.5s;
+
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    #sidebar{
+      width: $sidebar-width-ipad;
+      font-size: 16px;
+      background-color: $sidebar-color-ipad;
+    }
+  }
+  #main-container{
+    width: 100%;
   }
 }

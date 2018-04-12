@@ -15,3 +15,11 @@
 //= require cocoon
 //= require turbolinks
 //= require_tree .
+
+function openNav() {
+  document.getElementById("sidebar").style.width = "19%";
+}
+
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0"
+}

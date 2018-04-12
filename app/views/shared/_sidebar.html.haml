@@ -1,25 +1,29 @@
-%ul
-  %li
-    %span
-      %i.icon.ion-volume-high
-      = link_to "Audio Nodes", nodes_path
-  %li
-    %span
-      %i.icon.ion-code-working
-      = link_to "GPIO Nodes", node_gpios_path
-  %li
-    %span
-      %i.icon.ion-flash
-      = link_to "Powerstation", power_stations_path
-  %li
-    %span
-      %i.icon.ion-cube
-      = link_to "QOR", qors_path
-  %li
-    %span
-      %i.icon.ion-wifi
-      = link_to "Networking", networkings_path
-  %li
-    %span
-      %i.icon.ion-ios-pulse-strong
-      = link_to "Cables", wires_path
+%span
+  %ul
+    %li
+      %span
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    %li
+      %span
+        %i.icon.ion-volume-high
+        = link_to "Audio Nodes", nodes_path
+    %li
+      %span
+        %i.icon.ion-code-working
+        = link_to "GPIO Nodes", node_gpios_path
+    %li
+      %span
+        %i.icon.ion-flash
+        = link_to "Powerstation", power_stations_path
+    %li
+      %span
+        %i.icon.ion-cube
+        = link_to "QOR", qors_path
+    %li
+      %span
+        %i.icon.ion-wifi
+        = link_to "Networking", networkings_path
+    %li
+      %span
+        %i.icon.ion-ios-pulse-strong
+        = link_to "Cables", wires_path

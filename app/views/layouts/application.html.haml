@@ -14,9 +14,12 @@
       %section#header-main
         = render "shared/main_header"
     %main
-      %section#sidebar
-        = render "shared/sidebar"
+
+      %section#hidden-sidebar
+        %div{:class => "sidenav", :id => "sidebar"}
+          = render "shared/sidebar"
       %section#main
         #main-container
+
           = yield
     %footer
