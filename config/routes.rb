@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :qors
   resources :networkings
 
+  get "drafting" => "drafting#index"
   #Root Route
   root to: 'dashboard#index'
 
@@ -81,6 +82,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+
 
   get 'search/index'
   post 'search/query'

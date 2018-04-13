@@ -1,0 +1,10 @@
+%h1 Drafting#index
+%p find me in app/views/drafting/index.html.haml
+
+
+- @drafts.each do | file_name |
+  %li
+    %a{ :href => "#{@file_serv}#{file_name}", :title => "#{file_name}"}
+      %strong
+        = file_name
+  %br

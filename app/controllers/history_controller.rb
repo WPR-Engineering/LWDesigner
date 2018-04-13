@@ -13,6 +13,7 @@ class HistoryController < ApplicationController
     audit_change = @node_id.own_and_associated_audits
     audit_select_change = audit_change.find(params[:audit_id])
     @audit_show_change = audit_select_change.audited_changes
+    @audit_version = audit_select_change.version
 
   end
 

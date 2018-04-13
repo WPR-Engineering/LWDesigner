@@ -1,0 +1,2 @@
+module DraftingHelper
+end

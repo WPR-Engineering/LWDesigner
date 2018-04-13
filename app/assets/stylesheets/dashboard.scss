@@ -249,7 +249,7 @@ main {
 }
 
 #hidden-buttons{
-  display: none;
+  display: none !important;
 }
 
 
@@ -259,7 +259,7 @@ and (max-device-width : 1024px)  {
   /* STYLES GO HERE */
 
   #hidden-buttons{
-    display: inline;
+    display: inline-block !important;
   }
 
 

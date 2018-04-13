@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411213629) do
+ActiveRecord::Schema.define(version: 20180412194659) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -179,6 +179,48 @@ ActiveRecord::Schema.define(version: 20180411213629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["power_station_id"], name: "index_ps_outputs_on_power_station_id"
+  end
+
+  create_table "qor_gpio_terminals", force: :cascade do |t|
+    t.string "name"
+    t.integer "pin"
+    t.text "description"
+    t.integer "lwchannel"
+    t.text "notes"
+    t.string "ioDirection"
+    t.integer "port"
+    t.integer "qor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["qor_id"], name: "index_qor_gpio_terminals_on_qor_id"
+  end
+
+  create_table "qor_inputs", force: :cascade do |t|
+    t.string "name"
+    t.text "inputDescription"
+    t.integer "lwChannel"
+    t.boolean "shared"
+    t.string "sourceMode"
+    t.integer "gain"
+    t.boolean "disabled"
+    t.text "notes"
+    t.integer "qor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["qor_id"], name: "index_qor_inputs_on_qor_id"
+  end
+
+  create_table "qor_outputs", force: :cascade do |t|
+    t.string "destination"
+    t.text "outputDescription"
+    t.integer "slectedChannel"
+    t.string "mode"
+    t.integer "gain"
+    t.text "notes"
+    t.integer "qor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["qor_id"], name: "index_qor_outputs_on_qor_id"
   end
 
   create_table "qors", force: :cascade do |t|
